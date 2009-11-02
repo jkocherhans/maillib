@@ -1,8 +1,8 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name = "maillib",
-    version = "0.1",
+    version = "0.1.1",
     description = "A simplified interface to  Python's email package.",
     author = 'Joseph Kocherhans',
     author_email = 'jkocherhans@gmail.com',
@@ -14,5 +14,6 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Communications :: Email'
-    ]
+    ],
+    install_requires=['chardet']
 )
