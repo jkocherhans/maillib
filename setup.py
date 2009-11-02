@@ -21,5 +21,6 @@ setup(
         'Programming Language :: Python',
         'Topic :: Communications :: Email'
     ],
+    test_suite='maillib.tests.all',
     install_requires=['chardet']
 )
