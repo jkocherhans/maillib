@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+maillib
+=======
+
+maillib is a wrapper around Python's email package to provide simple and
+automatic decoding of messages to unicode and several other conveniences.
+
+Example
+=======
+
+>>> import maillib
+>>> import datetime
+>>>
+>>> RAW_MESSAGE = """\
+... MIME-version: 1.0
+... Date: Sun, 25 Oct 2009 21:12:18 -0500
+... Message-id: <c90890f0910251912y40797940ga9f22413411d59dc@mail.gmail.com>
+... Subject: =?UTF-8?B?0JLQsNGI0YMg0LzRi9GB0LvRjA==?=
+... From: Sender <sender@example.com>
+... To: =?UTF-8?B?0JLQu9Cw0LTQuMyB0LzQuNGAINCc0LDRj9C60L7MgdCy0YHQutC40Lk=?=
+...  <mayakovsky@example.com>
+... Content-type: multipart/alternative; boundary=001636ed670f4e3ad20476cd176b
+... 
+... --001636ed670f4e3ad20476cd176b
+... Content-Type: text/plain; charset=UTF-8
+... Content-Transfer-Encoding: base64
+... 
+... KtGB0L/QsNGB0LjQsdC+Kgo=
+... --001636ed670f4e3ad20476cd176b
+... Content-Type: text/html; charset=UTF-8
+... Content-Transfer-Encoding: quoted-printable
+... 
+... <span class=3D"Apple-style-span" style=3D"font-family: arial, sans-serif; f=
+... ont-size: 13px; border-collapse: collapse; "><b>=D1=81=D0=BF=D0=B0=D1=81=D0=
+... =B8=D0=B1=D0=BE</b></span>
+... 
+... --001636ed670f4e3ad20476cd176b--
+... """
+>>> msg = maillib.Message.from_string(RAW_MESSAGE)
+>>> msg.subject
+Вашу мысль
+
+>>> msg.sender
+(u'Sender', u'sender@example.com')
+
+>>> msg.to
+(u'Влади́мир Маяко́вский' u'mayakovsky@example.com')
+
+>>> msg.date
+datetime.datetime(2009, 10, 26, 2, 12, 18)
+
+>>> msg.body
+спасибо
+
+>>> msg.html
+<span class=3D"Apple-style-span" style=3D"font-family: arial, sans-serif; font-size: 13px; border-collapse: collapse; "><b>спасибо</b></span>
+
