@@ -7,7 +7,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README')).read()
 
 setup(
     name = "maillib",
-    version = "0.1.2",
+    version = "0.1.3",
     description = "A simplified interface to Python's email package.",
     long_description = README,
     author = 'Joseph Kocherhans',

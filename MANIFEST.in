@@ -1,5 +1,6 @@
 include LICENSE
 include README
 include MANIFEST.in
+include distribute_setup.py
 recursive-include docs *
 
