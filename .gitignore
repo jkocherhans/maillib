@@ -2,4 +2,7 @@ build
 dist
 maillib.egg-info
 MANIFEST
+*.pyc
+.DS_Store
+
 
