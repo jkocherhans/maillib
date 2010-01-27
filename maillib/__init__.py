@@ -72,33 +72,33 @@ class Message(object):
     """
 
     @classmethod
-    def from_message(self, msg):
+    def from_message(cls, msg):
         """
         Creates and returns a ``maillib.Message`` from and instance of
         ``email.Message.Message``.
         """
-        message = Message()
+        message = cls()
         message._message = msg
         message._decoder = MessageDecoder(msg)
         return message
 
     @classmethod
-    def from_file(self, f):
+    def from_file(cls, f):
         """
         Creates and returns a ``maillib.Message`` from a file-like object
         that contains a raw email message.
         """
         msg = email.message_from_file(f)
-        return Message.from_message(msg)
+        return cls.from_message(msg)
 
     @classmethod
-    def from_string(self, s):
+    def from_string(cls, s):
         """
         Creates and returns a ``maillib.Message`` from a string that contains
         a raw email message.
         """
         msg = email.message_from_string(s)
-        return Message.from_message(msg)
+        return cls.from_message(msg)
 
     @property
     def subject(self):
