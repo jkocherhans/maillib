@@ -23,6 +23,6 @@ setup(
         'Programming Language :: Python',
         'Topic :: Communications :: Email'
     ],
-    test_suite='maillib.tests.all',
+    test_suite='maillib.tests',
     install_requires=['chardet']
 )
