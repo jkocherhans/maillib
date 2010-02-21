@@ -6,13 +6,6 @@ import chardet
 
 # Utilities #################################################################
 
-def normalize_subject(subject):
-    """
-    Strips any leading Re or Fwd from the subject, and returns it. This is
-    sometimes useful for grouping messages.
-    """
-    return re.sub(r'(?i)(re:|fw:|fwd:)\s+', '', subject)
-
 def decode_header(header):
     """
     Decodes an email header to unicode. Assumes ascii if the encoding isn't
