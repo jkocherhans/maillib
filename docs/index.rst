@@ -13,6 +13,9 @@ Contents:
 
    messages
 
+   changes
+
+
 Indices and tables
 ==================
 
